@@ -11,6 +11,8 @@ public class Item : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     [SerializeField] private Canvas canvas;
     public RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    public int amount;
+    private int oldAmount = 0;
 
     private void Awake()
     {
@@ -54,6 +56,17 @@ public class Item : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHand
     // Update is called once per frame
     void Update()
     {
-        
+        //move the item off-screen if we have none
+        if (amount > 0 && oldAmount != amount)
+            rectTransform.anchoredPosition = new Vector3(0, 0, 0);
+        else if(amount <= 0)
+            rectTransform.anchoredPosition = new Vector3(-200, 0, 0);
+
+        oldAmount = amount;
+    }
+
+    public void increase()
+    {
+        amount += 1;
     }
 }
