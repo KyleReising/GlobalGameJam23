@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public int startingCash;
     public int cash;
 
+    public List<Object> listOfFarms;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -16,6 +19,9 @@ public class GameManager : MonoBehaviour
             GM = this;
         }
         GM.cash = startingCash;
+
+        // There is probably a better way to do this, but I am lazy LOL
+        listOfFarms.Add(GameObject.Find("Griddy"));
     }
 
     public bool Spend(int t) //Returns true if you actually CAN spend money.

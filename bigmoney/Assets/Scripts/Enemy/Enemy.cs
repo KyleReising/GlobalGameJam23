@@ -18,6 +18,9 @@ public class Enemy : MonoBehaviour
     public Vector2 targetLocation;
     public Rigidbody2D enemyRigidbody;
 
+    // Director stats
+    public float costInRage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,22 @@ public class Enemy : MonoBehaviour
         // Determine a target if we don't have one
 
         // See if we are close enough to the target to attack --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+        this.updateAttack();
+    }
+
+    // Called a fixed number of times per second
+    private void FixedUpdate()
+    {
+        this.updateMovement();
+    }
+
+    public virtual void updateTarget()
+    {
+        
+    }
+
+    public virtual void updateAttack()
+    {
         if (Vector2.Distance((Vector2)transform.position, targetLocation) > attackRange)
         {
             curAttackWindup = baseAttackWindup; // Reset the windup
@@ -66,7 +85,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    public virtual void updateMovement()
     {
         // Move towards target, don't if we are close enough to attack
         // Also don't move if we are on attack cooldown
@@ -79,12 +98,11 @@ public class Enemy : MonoBehaviour
         else
         {
             // Stop the enemies movement since we are now close to its target
-            this.enemyRigidbody.velocity = new Vector2(0,0);
+            this.enemyRigidbody.velocity = new Vector2(0, 0);
         }
     }
 
-
-    public void takeDamage(float damage)
+    public virtual void takeDamage(float damage)
     {
         this.health -= damage;
 
