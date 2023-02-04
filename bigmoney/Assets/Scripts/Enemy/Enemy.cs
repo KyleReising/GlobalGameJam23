@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     // Movement stats
     public Vector2 targetLocation;
     public Rigidbody2D enemyRigidbody;
+    public Placeable myPlaceableTarget = null;
 
     // Director stats
     public float costInRage;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // Determine a target if we don't have one
+        this.updateTarget();
 
         // See if we are close enough to the target to attack --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
         this.updateAttack();
@@ -44,11 +46,63 @@ public class Enemy : MonoBehaviour
 
     public virtual void updateTarget()
     {
-        
+        if (myPlaceableTarget != null)
+        {
+            // we do not need to continue if we already have a placeable
+            return;
+        }
+
+        //GameManager gm = FindObjectOfType<GameManager>();
+
+        // Get all our placeables
+        List<Placeable> templist = FindObjectOfType<GameManager>().getFarmPlaceable();
+
+        // If we do not have placeables, drop out
+        if(templist.Count == 0)
+        {
+            return;
+        }
+
+        // What is the closest placeable
+        Placeable closestp = null;
+        foreach(Placeable p in templist)
+        {
+            // if this is our first p, immediatly save it away
+            if (closestp == null)
+            {
+                closestp = p;
+                continue;
+            }
+            // Calculate distance to closest p and p
+            float distp = Vector2.Distance(p.gameObject.transform.position, this.gameObject.transform.position);
+            float distclosep = Vector2.Distance(closestp.gameObject.transform.position, this.gameObject.transform.position);
+
+
+            // Check to see if p is closer than closestp
+            if (distclosep > distp)
+            {
+                closestp = p;
+
+            }
+        }
+        myPlaceableTarget = closestp;
+        targetLocation = closestp.transform.position;
     }
 
     public virtual void updateAttack()
     {
+        if (curAttackCooldown <= 0)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        if (myPlaceableTarget == null)
+        {
+            curAttackWindup = baseAttackWindup;     // Reset the windup
+            curAttackCooldown -= Time.deltaTime;    // Tick down the attack cooldown
+            return;                                 // We don't have a target
+        }
+
         if (Vector2.Distance((Vector2)transform.position, targetLocation) > attackRange)
         {
             curAttackWindup = baseAttackWindup; // Reset the windup
@@ -66,6 +120,11 @@ public class Enemy : MonoBehaviour
             if (curAttackWindup <= 0)
             {
                 // Attack goes here
+                if (myPlaceableTarget.takeDamage(damage))
+                {
+                    myPlaceableTarget = null;
+                }
+                
                 GetComponent<SpriteRenderer>().color = Color.red; // Setting color to red while we are cooling down, once cooled down the enemy will at least turn back to white
                 curAttackCooldown = baseAttackCooldown;
                 curAttackWindup = baseAttackWindup;
@@ -87,6 +146,12 @@ public class Enemy : MonoBehaviour
 
     public virtual void updateMovement()
     {
+        if (myPlaceableTarget == null)
+        { 
+            this.enemyRigidbody.velocity = new Vector2(0, 0);
+            return;
+        }
+
         // Move towards target, don't if we are close enough to attack
         // Also don't move if we are on attack cooldown
         if (Vector2.Distance((Vector2)transform.position, targetLocation) > attackRange && curAttackCooldown <= 0)

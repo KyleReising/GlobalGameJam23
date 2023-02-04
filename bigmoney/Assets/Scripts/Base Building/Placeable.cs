@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Placeable : MonoBehaviour
 {
-    public int hp, mhp;  //hit points, maximum hit points.
+    public float hp = 1, mhp = 1;  //hit points, maximum hit points.
     public Slider hpSlider;
     public List<Organizer.Tag> myTags;
     public int id;
@@ -46,6 +46,15 @@ public class Placeable : MonoBehaviour
         return myTags;
     }
 
+    public virtual bool takeDamage(float damage)
+    {
+        this.hp -= damage;
 
-
+        if (this.hp <= 0)
+        {
+            Destroy(this.gameObject);
+            return true;
+        }
+        return false;
+    }
 }

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public int startingCash;
     public int cash;
 
-    public List<Object> listOfFarms;
+    public List<Farm> listOfFarms;
 
 
     // Start is called before the first frame update
@@ -20,8 +20,7 @@ public class GameManager : MonoBehaviour
         }
         GM.cash = startingCash;
 
-        // There is probably a better way to do this, but I am lazy LOL
-        listOfFarms.Add(GameObject.Find("Griddy"));
+        listOfFarms = new List<Farm>(GameObject.FindObjectsOfType<Farm>());
     }
 
     public bool Spend(int t) //Returns true if you actually CAN spend money.
@@ -51,5 +50,10 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+
+    public List<Placeable> getFarmPlaceable()
+    {
+        // When we have more farms, we can swap it to do a for each
+        return listOfFarms[0].GetAllPlaceables();
+    }
 }

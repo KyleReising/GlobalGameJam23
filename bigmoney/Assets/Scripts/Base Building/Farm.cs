@@ -104,4 +104,17 @@ public class Farm : MonoBehaviour
         }
         return p;
     }
+
+    public List<Placeable> GetAllPlaceables()
+    {
+        List<Placeable> p = new List<Placeable>();
+        foreach (Mound m in mounds)
+        {
+            if (m.occupant != null)
+            {
+                p.Add(m.occupant);
+            }
+        }
+        return p;
+    }
 }
