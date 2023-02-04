@@ -8,6 +8,7 @@ public class Mound : MonoBehaviour, IDropHandler
 {
     public RectTransform RT;
     public Item i;
+    public Placeable occupant;
 
 
     public void OnDrop(PointerEventData eventData)
@@ -19,11 +20,18 @@ public class Mound : MonoBehaviour, IDropHandler
         i = eventData.pointerDrag.GetComponent<Item>();
         Debug.Log(i.amount);
         i.amount -= 1;
-        
-        
         GameObject G = Instantiate(i.PlaceableObject, RT);
-
         G.transform.localPosition = Vector3.zero;
+        if (G.GetComponent<Placeable>() && occupant == null)
+        {
+            //I own the placeable as an occupant, and the placeable that knows i Own it
+            occupant = G.GetComponent<Placeable>();
+            G.GetComponent<Placeable>().myDirt = this;
+        }
+        else
+        {
+            //fail code here.
+        }
 
 
 

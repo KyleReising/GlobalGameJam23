@@ -8,6 +8,11 @@ public class Placeable : MonoBehaviour
 {
     public int hp, mhp;  //hit points, maximum hit points.
     public Slider hpSlider;
+    public List<Organizer.Tag> myTags;
+    public int id;
+    public Mound myDirt;
+    
+    
     
 
     void Start()
@@ -35,6 +40,12 @@ public class Placeable : MonoBehaviour
         }
         
     }
+
+    public List<Organizer.Tag> GetTags()
+    {
+        return myTags;
+    }
+
 
 
 }
