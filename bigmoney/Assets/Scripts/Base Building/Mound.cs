@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class Mound : MonoBehaviour, IDropHandler
 {
     public RectTransform RT;
+    public Placeable occupant;
 
 
 
@@ -19,10 +20,20 @@ public class Mound : MonoBehaviour, IDropHandler
         Item i = eventData.pointerDrag.GetComponent<Item>();
 
 
-        
-        GameObject G = Instantiate(i.PlaceableObject, RT);
 
+
+        GameObject G = Instantiate(i.PlaceableObject, RT);
         G.transform.localPosition = Vector3.zero;
+        if (G.GetComponent<Placeable>() && occupant == null)
+        {
+            //I own the placeable as an occupant, and the placeable that knows i Own it
+            occupant = G.GetComponent<Placeable>();
+            G.GetComponent<Placeable>().myDirt = this;
+        }
+        else
+        {
+            //fail code here.
+        }
 
 
 
