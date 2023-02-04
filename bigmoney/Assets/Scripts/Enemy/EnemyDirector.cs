@@ -8,7 +8,7 @@ public class EnemyDirector : MonoBehaviour
     public List<Enemy> myArmy;
 
     // Spawning stats
-    public float spawnDistance = 15f;
+    public float spawnDistance = 20f;
 
     // Rage stats
     public float targetRage;    // Once the rageMeter hits the targetRage, the director will spawn a horde
@@ -22,7 +22,7 @@ public class EnemyDirector : MonoBehaviour
     // Seeth stat
     public float seethMod;      // Used in seeth() to modify how more or less annoyed the director will be
 
-    public bool canWeRage = false, canPassivelySpawn = false;
+    public bool canWeRage = false, canPassivelySpawn = false, paused = true;
 
     // Griddy variables
     public List<Farm> farmList; 
@@ -35,14 +35,17 @@ public class EnemyDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Increase our rage
-        this.rageMeter += ragePerSecond * Time.deltaTime;
+        if (!paused)
+        {
+            // Increase our rage
+            this.rageMeter += ragePerSecond * Time.deltaTime;
 
-        // Build to and summons hoards
-        updateRage();
+            // Build to and summons hoards
+            updateRage();
 
-        // Will passively spawn in enemies, which spends rage
-        spawnPassively();
+            // Will passively spawn in enemies, which spends rage
+            spawnPassively();
+        } 
     }
 
     public void spawnPassively()
