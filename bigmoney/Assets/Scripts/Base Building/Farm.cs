@@ -14,10 +14,25 @@ public class Farm : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public List<Placeable> SearchByTag(Organizer.Tag tag)
     {
-        
+        List<Placeable> p = new List<Placeable>();
+        foreach (Mound m in mounds)
+        {
+            if (m.occupant != null)
+            {
+                foreach (Organizer.Tag h in m.occupant.myTags)
+                {
+                    if (tag == h)
+                    {
+                        p.Add(m.occupant);
+                    }
+                }
+
+            }
+        }
+
+        return p; //return list of all placeable objects that match the tags you give!
     }
 
     //Placeables are marked with given tags . . . give me a list of tags!
