@@ -8,7 +8,7 @@ public class Market : MonoBehaviour
     public int money;
     public Farm farm;
     public Text txt;
-    public Button potatoBtn;
+    public List<ButtonValues> btnList;
 
     private void Start()
     {
@@ -17,21 +17,24 @@ public class Market : MonoBehaviour
 
     private void Update()
     {
-        
+
         //button visibility
-        if (money < potatoBtn.gameObject.transform.localPosition.z)
-            potatoBtn.interactable = false;
-        else
-            potatoBtn.interactable = true;
+        foreach (ButtonValues btn in btnList)
+        {
+            if (money < btn.val)
+                btn.changeInteract(false);
+            else
+                btn.changeInteract(true);
+        }
 
         //money numbr
         txt.text = money.ToString();
     }
 
     //remove money on purchase
-    public void purchase(int val)
+    public void purchase(ButtonValues btn)
     {
-        money -= val;
+        money -= btn.val;
     }
 
 
