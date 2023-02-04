@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979410e54c374564abb5749b663f070b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 10
   mhp: 1
   hpSlider: {fileID: 0}
   myTags: 00000000

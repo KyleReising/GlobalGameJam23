@@ -43,8 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28f332a924cc08489b1c19f621f3099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRage: 0
+  myArmy:
+  - {fileID: 861909768133470634, guid: f407b14927457994d904bfffab2d60b2, type: 3}
+  spawnDistance: 10
+  targetRage: 30
   rageMeter: 0
-  ragePerSecond: 0
+  ragePerSecond: 1
+  curSpawnTimer: 0
+  baseSpawnTimer: 2
+  seethMod: 1
+  canWeRage: 1
+  canPassivelySpawn: 0
   farmList:
   - {fileID: 0}

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Placeable : MonoBehaviour
 {
-    public float hp = 1, mhp = 1;  //hit points, maximum hit points.
+    public float hp = 10, mhp = 10;  //hit points, maximum hit points.
     public Slider hpSlider;
     public List<Organizer.Tag> myTags;
     public int id;

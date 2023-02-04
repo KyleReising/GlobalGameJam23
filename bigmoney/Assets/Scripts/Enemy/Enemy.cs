@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     public Placeable myPlaceableTarget = null;
 
     // Director stats
-    public float costInRage;
+    public float costInRage = 10;
 
     // Start is called before the first frame update
     void Start()

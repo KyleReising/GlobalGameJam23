@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class EnemyDirector : MonoBehaviour
 {
-    // Stats
-    public float targetRage;    // Once the rageMeter hits the targetRage, the director will spawn a horde
-    public float rageMeter;     // A 'currency' the director will use to buy enemies
-    public float ragePerSecond; // How much rage the director passively gains
+    // List of enemies we can spawn :-)
+    public List<Enemy> myArmy;
 
+    // Spawning stats
+    public float spawnDistance = 15f;
+
+    // Rage stats
+    public float targetRage;    // Once the rageMeter hits the targetRage, the director will spawn a horde
+    public float rageMeter;     // A 'currency' the director will use to spawn enemies
+    public float ragePerSecond = 1; // How much rage the director passively gains
+
+    // Passively spawning stats
+    public float curSpawnTimer, baseSpawnTimer = 2f;
+
+
+    // Seeth stat
     public float seethMod;      // Used in seeth() to modify how more or less annoyed the director will be
+
+    public bool canWeRage = false, canPassivelySpawn = false;
 
     // Griddy variables
     public List<Farm> farmList; 
@@ -22,27 +35,88 @@ public class EnemyDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Increase our rage
+        this.rageMeter += ragePerSecond * Time.deltaTime;
+
+        // Build to and summons hoards
+        updateRage();
+
+        // Will passively spawn in enemies, which spends rage
+        spawnPassively();
+    }
+
+    public void spawnPassively()
+    {
+        if (canPassivelySpawn == false)
+            // We aren't allowed to passively spawn enemies, drop out
+            return;
+
+        if (curSpawnTimer <= 0)
+        {
+            // Spawn an enemy
+            float spawndirection = Random.Range(0f, 360f);
+            spawndirection = Mathf.Deg2Rad * spawndirection;
+            float y = spawnDistance * Mathf.Sin(spawndirection);
+            float x = spawnDistance * Mathf.Cos(spawndirection);
+            int spawnIDX = Random.Range(0, myArmy.Count);
+            tryToSpawnEnemyByIdx(spawnIDX, new Vector2(x, y));
+            curSpawnTimer = myArmy[spawnIDX].costInRage + baseSpawnTimer;
+        }
+        else
+        {
+            curSpawnTimer -= Time.deltaTime;
+        }
+    }
+
+    public bool tryToSpawnEnemyByIdx(int idx, Vector2 spawncoords) // Checks if it can afford enemy, spawns enemy, deducts cost and returns true, otherwise returns false
+    {
+        if (myArmy[idx].costInRage <= rageMeter)
+        {
+            rageMeter -= myArmy[idx].costInRage;
+            float x = Random.Range(-5, 5);
+            float y = Random.Range(-5, 5);
+            Instantiate(myArmy[idx], new Vector3(spawncoords.x + x, spawncoords.y + y), Quaternion.identity);
+            //Debug.Log("Spawned" + myArmy[idx].name); 
+            return true;
+        }    
+        return false;
     }
 
     public void updateRage()
     {
-        // Increase our rage
-        this.rageMeter += ragePerSecond * Time.deltaTime;
-        
-        // Check if rage has met or exceeded target rage
-        if (this.rageMeter >= this.targetRage)
+        if (canWeRage == false)
+            // We aren't allowed to rage, drop out
+            return;
+
+
+        if (myArmy.Count > 0)
         {
-            while (rageMeter >= 0)
-            {
-                rageMeter = 0;
-
-                // Spawn monsters until we run out of rage
-                // We can spend rage that we don't have
-                // For example, if we have 40 rage, but a unit costs 50, we can still spawn it
-
+            // Check if rage has met or exceeded target rage
+            if (this.rageMeter >= this.targetRage)
+            {                
                 // Generate a random spawn point
+                float spawndirection = Random.Range(0f, 360f);
+                spawndirection = Mathf.Deg2Rad * spawndirection;
+                float y = spawnDistance * Mathf.Sin(spawndirection);
+                float x = spawnDistance * Mathf.Cos(spawndirection);
+
+                int numberOfFails = 0;
+                
+                while (numberOfFails < 3) // Swap this to our lowest cost enemy
+                {
+                    // Spawn monsters until we run out of rage
+                    // We'll need to figure out what our lowest cost enemy is
+                    int spawnIDX = Random.Range(0, myArmy.Count);
+
+                    if (tryToSpawnEnemyByIdx(spawnIDX, new Vector2(x, y)) == true)
+                        continue;
+                    numberOfFails++;
+                }
             }
+        }
+        else
+        {
+            Debug.Log("Army too small");
         }
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6740941457254276686}
   - component: {fileID: 1531283049098730473}
   m_Layer: 0
-  m_Name: EnemyTest
+  m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,14 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c97bb4a31e11c742863909f9ec5c45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 100
-  health: 0
-  damage: 1
+  movementSpeed: 60
+  health: 10
+  damage: 5
   curAttackWindup: 0
-  baseAttackWindup: 1
+  baseAttackWindup: 2
   curAttackCooldown: 0
-  baseAttackCooldown: 1.5
-  attackRange: 1
+  baseAttackCooldown: 5
+  attackRange: 1.5
   targetLocation: {x: 0, y: 0}
   enemyRigidbody: {fileID: 0}
   myPlaceableTarget: {fileID: 0}
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: 12eb48e3bb7238b4f8f6afe920c22979, type: 3}
+  m_Sprite: {fileID: -5177388603050735206, guid: 716d3c9b940d3c54e881b54d0e5abf35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
