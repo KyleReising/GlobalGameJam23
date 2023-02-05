@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1531283049098730473}
   m_Layer: 0
   m_Name: Rocket Launcher
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
   enemyRigidbody: {fileID: 0}
   myPlaceableTarget: {fileID: 0}
   costInRage: 30
+  myPreferenceTags: 02000000
 --- !u!212 &6740941457254276686
 SpriteRenderer:
   m_ObjectHideFlags: 0

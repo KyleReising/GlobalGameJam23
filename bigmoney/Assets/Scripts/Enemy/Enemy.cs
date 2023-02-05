@@ -21,11 +21,13 @@ public class Enemy : MonoBehaviour
 
     // Director stats
     public float costInRage = 10;
+    public List<Organizer.Tag> myPreferenceTags;
 
     // Start is called before the first frame update
     void Start()
     {
         this.enemyRigidbody = GetComponent<Rigidbody2D>();
+        this.myPreferenceTags = new List<Organizer.Tag>();
     }
 
     // Update is called once per frame
@@ -52,41 +54,77 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        //GameManager gm = FindObjectOfType<GameManager>();
+        GameManager gm = FindObjectOfType<GameManager>();
 
         // Get all our placeables
-        List<Placeable> genericlist = FindObjectOfType<GameManager>().getFarmPlaceable();
+        List<Placeable> genericlist = gm.getFarmPlaceable();
+        List<Placeable> preferedlist = gm.getFarmPlaceableByTags(myPreferenceTags);
+        Debug.Log(preferedlist);
+
 
         // If we do not have placeables, drop out
-        if(genericlist.Count == 0)
+        if (genericlist.Count == 0)
         {
             return;
         }
-
-        // What is the closest placeable
-        Placeable closestp = null;
-        foreach(Placeable p in genericlist)
+        
+        // Check if we have 
+        if (preferedlist.Count != 0)
         {
-            // if this is our first p, immediatly save it away
-            if (closestp == null)
+            // What is the closest prefered placeable
+            Placeable closestp = null;
+            foreach (Placeable p in preferedlist)
             {
-                closestp = p;
-                continue;
+                // if this is our first p, immediatly save it away
+                if (closestp == null)
+                {
+                    closestp = p;
+                    continue;
+                }
+                // Calculate distance to closest p and p
+                float distp = Vector2.Distance(p.gameObject.transform.position, this.gameObject.transform.position);
+                float distclosep = Vector2.Distance(closestp.gameObject.transform.position, this.gameObject.transform.position);
+
+
+                // Check to see if p is closer than closestp
+                if (distclosep > distp)
+                {
+                    closestp = p;
+
+                }
             }
-            // Calculate distance to closest p and p
-            float distp = Vector2.Distance(p.gameObject.transform.position, this.gameObject.transform.position);
-            float distclosep = Vector2.Distance(closestp.gameObject.transform.position, this.gameObject.transform.position);
-
-
-            // Check to see if p is closer than closestp
-            if (distclosep > distp)
-            {
-                closestp = p;
-
-            }
+            myPlaceableTarget = closestp;
+            targetLocation = closestp.transform.position;
+            return;
         }
-        myPlaceableTarget = closestp;
-        targetLocation = closestp.transform.position;
+        else
+        {
+            // What is the closest non prefered placeable
+            Placeable closestp = null;
+            foreach (Placeable p in genericlist)
+            {
+                // if this is our first p, immediatly save it away
+                if (closestp == null)
+                {
+                    closestp = p;
+                    continue;
+                }
+                // Calculate distance to closest p and p
+                float distp = Vector2.Distance(p.gameObject.transform.position, this.gameObject.transform.position);
+                float distclosep = Vector2.Distance(closestp.gameObject.transform.position, this.gameObject.transform.position);
+
+
+                // Check to see if p is closer than closestp
+                if (distclosep > distp)
+                {
+                    closestp = p;
+
+                }
+            }
+            myPlaceableTarget = closestp;
+            targetLocation = closestp.transform.position;
+            return;
+        }
     }
 
     public virtual void updateAttack()

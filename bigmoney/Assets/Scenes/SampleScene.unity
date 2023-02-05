@@ -2353,16 +2353,52 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: paused
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
       propertyPath: canWeRage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: ragePerSecond
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: canPassivelySpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: myArmy.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: myArmy.Array.data[0]
+      value: 
+      objectReference: {fileID: 861909768133470634, guid: 998ca03efbf979745839031212f1d239, type: 3}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: myArmy.Array.data[1]
+      value: 
+      objectReference: {fileID: 861909768133470634, guid: 6b1e0e1a79098824baa48949599abebb, type: 3}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: myArmy.Array.data[2]
+      value: 
+      objectReference: {fileID: 861909768133470634, guid: bb15bcf5c1758a44c8754176ae9e5228, type: 3}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: myArmy.Array.data[3]
+      value: 
+      objectReference: {fileID: 861909768133470634, guid: 27b1f315ee1c53344a8b2b6b57849494, type: 3}
+    - target: {fileID: -6961359028662298846, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
+      propertyPath: myArmy.Array.data[4]
+      value: 
+      objectReference: {fileID: 861909768133470634, guid: 32d1b2c6b261ed54f9a5515314e870b1, type: 3}
     - target: {fileID: 268222084301122971, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
       propertyPath: m_Name
       value: EnemyDirector
       objectReference: {fileID: 0}
     - target: {fileID: 3052318982680588696, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3052318982680588696, guid: ed97f590a913d1949bf0d2c739e69c17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3001,7 +3037,7 @@ RectTransform:
   - {fileID: 1789721472}
   - {fileID: 1688546851}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

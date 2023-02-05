@@ -64,14 +64,14 @@ public class GameManager : MonoBehaviour
         return templist;
     }
 
-    public List<Placeable> getFarmPlaceableByTags()
+    public List<Placeable> getFarmPlaceableByTags(List<Organizer.Tag> tags)
     {
         // When we have more farms, we can swap it to do a for each
         List<Placeable> templist = new List<Placeable>();
 
         foreach (Farm f in listOfFarms)
         {
-            templist.AddRange(f.GetAllPlaceables());
+            templist.AddRange(f.SearchByTag(tags));
         }
 
         return templist;
