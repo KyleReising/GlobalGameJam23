@@ -9,12 +9,13 @@ public class CustomCursor : MonoBehaviour
     void Start()
     {
         // this sets the base cursor as invisible
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     void Update()
     {
-        mCursorVisual.position = Input.mousePosition + mDisplacement;
+        
+        mCursorVisual.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + mDisplacement);
 
     }
 }
