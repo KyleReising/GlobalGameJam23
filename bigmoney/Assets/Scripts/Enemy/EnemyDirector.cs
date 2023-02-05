@@ -25,7 +25,10 @@ public class EnemyDirector : MonoBehaviour
     public bool canWeRage = false, canPassivelySpawn = false, paused = true;
 
     // Griddy variables
-    public List<Farm> farmList; 
+    public List<Farm> farmList;
+
+    // What I've spawn
+    public List<Enemy> mySpawnedEnemies;
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +82,7 @@ public class EnemyDirector : MonoBehaviour
             rageMeter -= myArmy[idx].costInRage;
             float x = Random.Range(-5, 5);
             float y = Random.Range(-5, 5);
-            Instantiate(myArmy[idx], new Vector3(spawncoords.x + x, spawncoords.y + y), Quaternion.identity);
+            mySpawnedEnemies.Add(Instantiate(myArmy[idx], new Vector3(spawncoords.x + x, spawncoords.y + y), Quaternion.identity));
             //Debug.Log("Spawned" + myArmy[idx].name); 
             return true;
         }    
@@ -153,5 +156,10 @@ public class EnemyDirector : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public List<Enemy> getEnemies()
+    {
+        return mySpawnedEnemies;
     }
 }
