@@ -11,6 +11,8 @@ public class Market : MonoBehaviour
     public List<ButtonValues> btnList;
     public static Market me;
     public AudioSource audioSource;
+    public GameObject winPanel;
+    public GameObject retPanel;
 
     private void Start()
     {
@@ -65,6 +67,14 @@ public class Market : MonoBehaviour
         }
         if(!audioSource.isPlaying && shouldSound)
             audioSource.Play();
+
+
+        if(money < 0)
+        {
+            Time.timeScale = 0.0f;
+            winPanel.SetActive(true);
+            retPanel.SetActive(true);
+        }
         
     }
 }
