@@ -3508,7 +3508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652f891637f025a4abdee8067b949d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 500
+  money: 0
   farm: {fileID: 729583820}
   txt: {fileID: 1688546852}
   btnList:
@@ -6341,7 +6341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2827595435060640285, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 1.3
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2827595435060640285, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -6449,7 +6449,7 @@ PrefabInstance:
       objectReference: {fileID: 1588493975}
     - target: {fileID: 4406725307893398133, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: val
-      value: 32000000
+      value: 320000000
       objectReference: {fileID: 0}
     - target: {fileID: 4406725307893398133, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: cost
@@ -7888,7 +7888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2827595435060640285, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 420
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 2827595435060640285, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
