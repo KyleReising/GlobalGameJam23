@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
     // Director stats
     public float costInRage = 10;
     public List<Organizer.Tag> myPreferenceTags;
+    public bool isRanged;
+
 
     // Start is called before the first frame update
     void Start()
@@ -161,7 +163,10 @@ public class Enemy : MonoBehaviour
                 {
                     myPlaceableTarget = null;
                 }
-                
+                if(isRanged)
+                {
+                    FindObjectOfType<GameManager>().spawnAttackLine(this.gameObject.transform.position, targetLocation);
+                }
                 GetComponent<SpriteRenderer>().color = Color.red; // Setting color to red while we are cooling down, once cooled down the enemy will at least turn back to white
                 curAttackCooldown = baseAttackCooldown;
                 curAttackWindup = baseAttackWindup;

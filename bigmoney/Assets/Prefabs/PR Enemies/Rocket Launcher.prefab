@@ -59,6 +59,7 @@ MonoBehaviour:
   myPlaceableTarget: {fileID: 0}
   costInRage: 30
   myPreferenceTags: 02000000
+  isRanged: 1
 --- !u!212 &6740941457254276686
 SpriteRenderer:
   m_ObjectHideFlags: 0

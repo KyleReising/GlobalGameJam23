@@ -76,4 +76,19 @@ public class GameManager : MonoBehaviour
 
         return templist;
     }
+
+    public void spawnAttackLine(Vector2 startpos, Vector2 endpos)
+    {
+        LineRenderer CurrentLR = new GameObject().AddComponent<LineRenderer>() as LineRenderer;
+        CurrentLR.SetPosition(0, new Vector3(startpos.x, startpos.y, -4));
+        CurrentLR.SetPosition(1, new Vector3(endpos.x, endpos.y, -4));
+
+        CurrentLR.startWidth = 0.25f;
+        CurrentLR.endWidth = 0.25f;
+        CurrentLR.material = new Material(Shader.Find("Sprites/Default"));
+        CurrentLR.startColor = Color.red;
+        CurrentLR.endColor = Color.red;
+
+        Destroy(CurrentLR, 0.5f);
+    }
 }
