@@ -101,4 +101,5 @@ MonoBehaviour:
   myPreferenceTags: 00000000
   id: 1
   myDirt: {fileID: 0}
+  description: A potato, but sweeter! Sells for $200.
   value: 200

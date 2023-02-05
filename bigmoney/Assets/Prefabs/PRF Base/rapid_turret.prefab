@@ -101,6 +101,8 @@ MonoBehaviour:
   myPreferenceTags: 
   id: 503
   myDirt: {fileID: 0}
+  description: A close range turret with a high fire rate and higher than normal
+    damage.
   range: 5
   dmg: 6
   fireCD: 0.75

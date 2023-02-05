@@ -101,6 +101,7 @@ MonoBehaviour:
   myPreferenceTags: 
   id: 501
   myDirt: {fileID: 0}
+  description: Yee average turret with a slow fire rate.
   range: 5
   dmg: 5
   fireCD: 2

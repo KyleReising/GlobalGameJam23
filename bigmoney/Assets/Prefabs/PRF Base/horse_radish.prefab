@@ -101,4 +101,5 @@ MonoBehaviour:
   myPreferenceTags: 00000000
   id: 5
   myDirt: {fileID: 0}
+  description: Sells for a whopping $32M! (Not an actual horse)
   value: 32000000

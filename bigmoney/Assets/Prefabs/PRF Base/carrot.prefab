@@ -101,4 +101,5 @@ MonoBehaviour:
   myPreferenceTags: 00000000
   id: 3
   myDirt: {fileID: 0}
+  description: Sells for 80k. Also helps you see better. Maybe.
   value: 80000

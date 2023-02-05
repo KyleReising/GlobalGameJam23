@@ -101,4 +101,5 @@ MonoBehaviour:
   myPreferenceTags: 00000000
   id: 4
   myDirt: {fileID: 0}
+  description: A pricey vegtable, selling for 1.6M!
   value: 1600000

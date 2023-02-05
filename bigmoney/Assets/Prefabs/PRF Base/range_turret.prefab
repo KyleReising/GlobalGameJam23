@@ -101,6 +101,7 @@ MonoBehaviour:
   myPreferenceTags: 
   id: 502
   myDirt: {fileID: 0}
+  description: More range than your average turrent, and a bit more fire rate!
   range: 15
   dmg: 5
   fireCD: 1.5

@@ -11,6 +11,7 @@ public class Placeable : MonoBehaviour
     public List<Organizer.Tag> myPreferenceTags;
     public int id;
     public Mound myDirt;
+    public string description;
     
     
     

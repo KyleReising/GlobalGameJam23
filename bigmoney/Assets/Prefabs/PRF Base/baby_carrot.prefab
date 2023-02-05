@@ -101,4 +101,5 @@ MonoBehaviour:
   myPreferenceTags: 00000000
   id: 2
   myDirt: {fileID: 0}
+  description: A bunch of tiny carrots. Worth 4K.
   value: 4000
