@@ -14,6 +14,7 @@ public class EnemyDirector : MonoBehaviour
     public float targetRage;    // Once the rageMeter hits the targetRage, the director will spawn a horde
     public float rageMeter;     // A 'currency' the director will use to spawn enemies
     public float ragePerSecond = 1; // How much rage the director passively gains
+    public float derivative = 0.05f;
 
     // Passively spawning stats
     public float curSpawnTimer, baseSpawnTimer = 2f;
@@ -37,6 +38,11 @@ public class EnemyDirector : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    private void FixedUpdate()
+    {
+        ragePerSecond += derivative * Time.deltaTime;
+    }
     void Update()
     {
         if (!paused)

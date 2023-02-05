@@ -6,6 +6,19 @@ public class Farm : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<Mound> mounds = new List<Mound>();
+    public GameObject retrypanel;
+
+    private void Update()
+    {
+        if (NumOfPlace() < 1)
+        {
+            retrypanel.SetActive(true);
+            Debug.Log("Game over");
+            Time.timeScale = 0.0f;
+
+        }
+    }
+
     void Start()
     {
         foreach(Mound m in GetComponentsInChildren<Mound>())
@@ -116,5 +129,16 @@ public class Farm : MonoBehaviour
             }
         }
         return p;
+    }
+
+    public int NumOfPlace()
+    {
+        int i = 0;
+        foreach(Mound m in mounds)
+        {
+            if (m.occupant != null)
+                i++;
+        }
+        return i;
     }
 }

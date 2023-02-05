@@ -29,13 +29,13 @@ public class Market : MonoBehaviour
 
         //money numbr
         if (money >= 1000000000)
-            txt.text = "$" + (((float)money + 1) / 1000000000).ToString("F1") + "B";
+            txt.text = (((float)money + 1) / 1000000000).ToString("F1") + "B";
         else if (money >= 1000000)
-            txt.text = "$" + (((float)money + 1) / 1000000).ToString("F1") + "M";
+            txt.text = (((float)money + 1) / 1000000).ToString("F1") + "M";
         else if (money >= 1000)
-            txt.text = "$" + (((float)money + 1) / 1000).ToString("F1") + "k";
+            txt.text =  (((float)money + 1) / 1000).ToString("F1") + "k";
         else
-            txt.text = "$" + ((float)money).ToString();
+            txt.text =  ((float)money).ToString();
 
 
     }
