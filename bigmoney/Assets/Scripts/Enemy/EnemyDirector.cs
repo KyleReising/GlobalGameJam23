@@ -33,7 +33,7 @@ public class EnemyDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        mySpawnedEnemies = new List<Enemy>();
     }
 
     // Update is called once per frame
@@ -161,5 +161,10 @@ public class EnemyDirector : MonoBehaviour
     public List<Enemy> getEnemies()
     {
         return mySpawnedEnemies;
+    }
+
+    public void destroyEnemyFromList(Enemy inenemy)
+    {
+        mySpawnedEnemies.Remove(inenemy);
     }
 }

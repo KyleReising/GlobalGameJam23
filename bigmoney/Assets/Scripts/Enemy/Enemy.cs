@@ -210,6 +210,7 @@ public class Enemy : MonoBehaviour
 
         if (this.health <= 0)
         {
+            FindObjectOfType<EnemyDirector>().destroyEnemyFromList(this);
             Destroy(this.gameObject);
         }
     }
