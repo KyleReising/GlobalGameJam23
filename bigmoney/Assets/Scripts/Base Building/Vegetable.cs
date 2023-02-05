@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Vegetable : Placeable
@@ -14,11 +15,14 @@ public class Vegetable : Placeable
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public virtual int harvest()
     {
-        return value;
+        int a = (int)Mathf.Pow(2, (myDirt.fertility)-1);
+        return value * a;
     }
+
+
 }

@@ -9,7 +9,7 @@ public class Mound : MonoBehaviour, IDropHandler
     public RectTransform RT;
     public Item i;
     public Placeable occupant;
-
+    public int fertility = 0;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -21,7 +21,7 @@ public class Mound : MonoBehaviour, IDropHandler
 
         if (i.PlaceableObject != null && occupant == null)
         {
-            Debug.Log(i.amount);
+
             i.amount -= 1;
             GameObject G = Instantiate(i.PlaceableObject, RT);
             G.transform.localPosition = Vector3.zero;

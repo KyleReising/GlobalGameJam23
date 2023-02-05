@@ -232,6 +232,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 927304061}
     m_Modifications:
+    - target: {fileID: 2827595435000331067, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Text
+      value: Carrot
+      objectReference: {fileID: 0}
     - target: {fileID: 2827595435060640280, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: m_Name
       value: CarrotButton
@@ -367,6 +371,14 @@ PrefabInstance:
     - target: {fileID: 4406725307893398133, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: val
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694850256332250315, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Text
+      value: $1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767150002264025818, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Name
+      value: CostText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
@@ -1134,6 +1146,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 927304061}
     m_Modifications:
+    - target: {fileID: 2827595435000331067, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Text
+      value: Baby Carrot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827595435000331067, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827595435000331067, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2827595435060640280, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: m_Name
       value: BabyButton
@@ -1269,6 +1293,14 @@ PrefabInstance:
     - target: {fileID: 4406725307893398133, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: val
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694850256332250315, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Text
+      value: $1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767150002264025818, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Name
+      value: CostText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
@@ -1753,6 +1785,10 @@ PrefabInstance:
       propertyPath: cost
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8767150002264025818, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Name
+      value: CostText
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5514159571031822577, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
@@ -1980,6 +2016,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 757470691}
+    - target: {fileID: 8768480806545435777, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
+      propertyPath: PlaceableObject
+      value: 
+      objectReference: {fileID: 6763921341014361351, guid: 62c48a90c7134fd4eb0a785d057531fb, type: 3}
     - target: {fileID: 8768480807665593809, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
       propertyPath: m_Name
       value: InventorySlot (3)
@@ -3618,6 +3658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HorseItem
       objectReference: {fileID: 0}
+    - target: {fileID: 8768480806545435777, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
+      propertyPath: PlaceableObject
+      value: 
+      objectReference: {fileID: 1931256109026998977, guid: 9b8c7a3e6ef5d1f488d52268f44216bd, type: 3}
     - target: {fileID: 8768480807665593809, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
       propertyPath: m_Name
       value: InventorySlot (5)
@@ -4553,6 +4597,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 757470691}
+    - target: {fileID: 8768480806545435777, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
+      propertyPath: PlaceableObject
+      value: 
+      objectReference: {fileID: 4220060904064946592, guid: 58eeba68dc1a0ae43aaa28b97c7be977, type: 3}
     - target: {fileID: 8768480807665593809, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
       propertyPath: m_Name
       value: InventorySlot (4)
@@ -4655,6 +4703,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 927304061}
     m_Modifications:
+    - target: {fileID: 2827595435000331067, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Text
+      value: Beet
+      objectReference: {fileID: 0}
     - target: {fileID: 2827595435060640280, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: m_Name
       value: BeetButton
@@ -4790,6 +4842,14 @@ PrefabInstance:
     - target: {fileID: 4406725307893398133, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: val
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694850256332250315, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Text
+      value: $1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767150002264025818, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Name
+      value: CostText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
@@ -5596,6 +5656,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 757470691}
+    - target: {fileID: 8768480806545435777, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
+      propertyPath: PlaceableObject
+      value: 
+      objectReference: {fileID: 2353080111221993719, guid: b28ad597a3434f3469b0957c926a5200, type: 3}
     - target: {fileID: 8768480807665593809, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
       propertyPath: m_Name
       value: InventorySlot (2)
@@ -5816,6 +5880,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 927304061}
     m_Modifications:
+    - target: {fileID: 2827595435000331067, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Text
+      value: Horseradish
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827595435000331067, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2827595435000331067, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2827595435060640280, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: m_Name
       value: HorseButton
@@ -5951,6 +6027,14 @@ PrefabInstance:
     - target: {fileID: 4406725307893398133, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
       propertyPath: val
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4694850256332250315, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Text
+      value: $1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767150002264025818, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Name
+      value: CostText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
@@ -7262,6 +7346,10 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 8767150002264025818, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
+      propertyPath: m_Name
+      value: CostText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8cb64987b59864ab311c113f98c0e1, type: 3}
 --- !u!1001 &1970788956
@@ -7373,6 +7461,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 880906374}
     m_Modifications:
+    - target: {fileID: 2924663017640289263, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
+      propertyPath: m_Name
+      value: SprinlerItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768480806545435777, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
+      propertyPath: amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768480806545435777, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
+      propertyPath: PlaceableObject
+      value: 
+      objectReference: {fileID: 5165756592343929214, guid: f01a71adfbd2ff5489ce64119f540805, type: 3}
     - target: {fileID: 8768480807665593809, guid: d471456b59f2b1c4aad82747c19645f9, type: 3}
       propertyPath: m_Name
       value: InventorySlot (6)
