@@ -57,4 +57,11 @@ public class Placeable : MonoBehaviour
         }
         return false;
     }
+
+
+    public virtual void removeMe()
+    {
+        this.gameObject.transform.position.Set(-5000, 0, 0);
+        Destroy(this.gameObject);
+    }
 }
