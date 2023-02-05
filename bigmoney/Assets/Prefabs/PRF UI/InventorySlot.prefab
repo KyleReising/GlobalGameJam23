@@ -59,14 +59,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3584906, g: 0.2042719, b: 0.103150584, a: 0.392}
+  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: fc362da1bddc4e64ab832eb74c8bbd50, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -85,7 +85,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2035936530206325879, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
       propertyPath: m_Name
-      value: Item1
+      value: PotatoItem
       objectReference: {fileID: 0}
     - target: {fileID: 5367895138227377745, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
       propertyPath: m_Pivot.x
@@ -117,11 +117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5367895138227377745, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 45
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5367895138227377745, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 45
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5367895138227377745, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -169,6 +169,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5367895138227377745, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582354872606602009, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
+      propertyPath: amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582354872606602009, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
+      propertyPath: PlaceableObject
+      value: 
+      objectReference: {fileID: 6461447541625800880, guid: 5ead79812e8fd2d4c8b20708fe0c6312, type: 3}
+    - target: {fileID: 8402906080800569875, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd67b29efd452004197d44a2a65a620f, type: 3}
+    - target: {fileID: 8864933724963584756, guid: 2323a98b61acb04499fb10738af178ea, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
