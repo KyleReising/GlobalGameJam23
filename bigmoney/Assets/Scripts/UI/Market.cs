@@ -39,7 +39,7 @@ public class Market : MonoBehaviour
 
 
     //update money on harvest
-    public void harvest()
+    public void harvest(AudioSource boom)
     {
         List<Placeable> a = farm.SearchByTag(Organizer.Tag.Vegtable);
         foreach (Placeable veg in a)
@@ -48,6 +48,8 @@ public class Market : MonoBehaviour
             money += veg.gameObject.GetComponent<Vegetable>().harvest();
 
         }
+        if(!boom.isPlaying)
+            boom.Play();
         
     }
 }

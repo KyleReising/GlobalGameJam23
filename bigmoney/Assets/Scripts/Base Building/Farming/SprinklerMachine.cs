@@ -11,9 +11,11 @@ public class SprinklerMachine : Placeable
     {
     }
 
+    //if we hit mound, upgrade fertility
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<Mound>().fertility += 1;
+        if(collision.gameObject.GetComponent<Mound>() != null)
+            collision.gameObject.GetComponent<Mound>().fertility += 1;
     }
 
 }
