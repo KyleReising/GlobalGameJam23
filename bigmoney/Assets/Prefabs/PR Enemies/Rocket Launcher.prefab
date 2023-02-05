@@ -45,14 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c97bb4a31e11c742863909f9ec5c45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 60
+  movementSpeed: 55
   health: 10
   damage: 500
   curAttackWindup: 0
-  baseAttackWindup: 3
+  baseAttackWindup: 5
   curAttackCooldown: 0
-  baseAttackCooldown: 10
-  attackRange: 5
+  baseAttackCooldown: 20
+  attackRange: 8
   targetLocation: {x: 0, y: 0}
   enemyRigidbody: {fileID: 0}
   myPlaceableTarget: {fileID: 0}

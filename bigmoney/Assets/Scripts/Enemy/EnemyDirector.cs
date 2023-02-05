@@ -137,20 +137,20 @@ public class EnemyDirector : MonoBehaviour
         switch(amount)
         {
             case rageAmount.SMALL:
-                {
-                    rageMeter += 5 * seethMod;
-                    break;
-                }
+            {
+                rageMeter += 5 * seethMod;
+                break;
+            }
             case rageAmount.MEDIUM:
-                {
-                    rageMeter += 10 * seethMod;
-                    break;
-                }
+            {
+                rageMeter += 10 * seethMod;
+                break;
+            }
             case rageAmount.LARGE:
-                {
-                    rageMeter += 20 * seethMod;
-                    break;
-                }
+            {
+                rageMeter += 20 * seethMod;
+                break;
+            }
         }
     }
 }

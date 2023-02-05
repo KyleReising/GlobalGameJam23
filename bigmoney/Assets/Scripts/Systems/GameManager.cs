@@ -54,6 +54,26 @@ public class GameManager : MonoBehaviour
     public List<Placeable> getFarmPlaceable()
     {
         // When we have more farms, we can swap it to do a for each
-        return listOfFarms[0].GetAllPlaceables();
+        List<Placeable> templist = new List<Placeable>();
+
+        foreach(Farm f in listOfFarms)
+        {
+            templist.AddRange(f.GetAllPlaceables());
+        }
+
+        return templist;
+    }
+
+    public List<Placeable> getFarmPlaceableByTags()
+    {
+        // When we have more farms, we can swap it to do a for each
+        List<Placeable> templist = new List<Placeable>();
+
+        foreach (Farm f in listOfFarms)
+        {
+            templist.AddRange(f.GetAllPlaceables());
+        }
+
+        return templist;
     }
 }

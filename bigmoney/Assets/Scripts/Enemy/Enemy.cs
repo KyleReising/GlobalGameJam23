@@ -55,17 +55,17 @@ public class Enemy : MonoBehaviour
         //GameManager gm = FindObjectOfType<GameManager>();
 
         // Get all our placeables
-        List<Placeable> templist = FindObjectOfType<GameManager>().getFarmPlaceable();
+        List<Placeable> genericlist = FindObjectOfType<GameManager>().getFarmPlaceable();
 
         // If we do not have placeables, drop out
-        if(templist.Count == 0)
+        if(genericlist.Count == 0)
         {
             return;
         }
 
         // What is the closest placeable
         Placeable closestp = null;
-        foreach(Placeable p in templist)
+        foreach(Placeable p in genericlist)
         {
             // if this is our first p, immediatly save it away
             if (closestp == null)
