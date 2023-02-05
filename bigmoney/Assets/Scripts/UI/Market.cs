@@ -9,9 +9,16 @@ public class Market : MonoBehaviour
     public Farm farm;
     public Text txt;
     public List<ButtonValues> btnList;
+    public static Market me;
+    public AudioSource audioSource;
 
     private void Start()
     {
+        if(me == null)
+        {
+            me = this;
+            me.audioSource = GetComponent<AudioSource>();
+        }
         txt.text = "0";
     }
 
@@ -48,7 +55,7 @@ public class Market : MonoBehaviour
 
 
     //update money on harvest
-    public void harvest(AudioSource boom)
+    public void harvest(bool shouldSound)
     {
         List<Placeable> a = farm.SearchByTag(Organizer.Tag.Vegtable);
         foreach (Placeable veg in a)
@@ -56,8 +63,8 @@ public class Market : MonoBehaviour
             money += veg.gameObject.GetComponent<Vegetable>().harvest();
 
         }
-        if(!boom.isPlaying)
-            boom.Play();
+        if(!audioSource.isPlaying && shouldSound)
+            audioSource.Play();
         
     }
 }
