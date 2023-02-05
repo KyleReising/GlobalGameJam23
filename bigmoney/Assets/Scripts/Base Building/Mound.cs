@@ -19,9 +19,12 @@ public class Mound : MonoBehaviour, IDropHandler
         //eventData.pointerDrag is the literal gameObject that's on top of us.  Let's get an item from the gameobject!
         i = eventData.pointerDrag.GetComponent<Item>();
 
-        if (i.PlaceableObject != null && occupant == null)
+        if (i.PlaceableObject != null)
         {
-
+            if(occupant != null)
+            {
+                occupant.removeMe();
+            }
             i.amount -= 1;
             GameObject G = Instantiate(i.PlaceableObject, RT);
             G.transform.localPosition = Vector3.zero;

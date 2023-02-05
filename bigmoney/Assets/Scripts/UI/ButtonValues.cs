@@ -12,6 +12,7 @@ public class ButtonValues : MonoBehaviour
     public void Start()
     {
         btn = GetComponent<Button>();
+        updateVal(1.0f);
     }
 
     public void changeInteract(bool x)
@@ -19,8 +20,19 @@ public class ButtonValues : MonoBehaviour
         btn.interactable = x;
     }
 
-    public void updateVal(int mul)
+    public void updateVal(float mul)
     {
-        val *= mul;
+        float temp = val;
+        temp *= mul;
+        val = (int)temp;
+
+        if (val >= 1000000000)
+            cost.text = "$" + (((float)val+1) / 1000000000).ToString("F1") + "B";
+        else if (val >= 1000000)
+            cost.text = "$" + (((float)val + 1) / 1000000).ToString("F1") + "M";
+        else if (val >= 1000)
+            cost.text = "$" + (((float)val + 1) / 1000).ToString("F1") + "k";
+        else
+            cost.text = "$" + ((float)val).ToString();
     }
 }
