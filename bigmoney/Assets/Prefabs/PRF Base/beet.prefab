@@ -98,7 +98,7 @@ MonoBehaviour:
   hp: 1
   mhp: 1
   hpSlider: {fileID: 0}
-  myTags: 00000000
+  myPreferenceTags: 00000000
   id: 4
   myDirt: {fileID: 0}
   value: 1600000

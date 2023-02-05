@@ -44,7 +44,6 @@ public class Market : MonoBehaviour
         List<Placeable> a = farm.SearchByTag(Organizer.Tag.Vegtable);
         foreach (Placeable veg in a)
         {
-            Debug.Log(veg);
             money += veg.gameObject.GetComponent<Vegetable>().harvest();
 
         }

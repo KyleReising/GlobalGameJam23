@@ -57,7 +57,7 @@ MonoBehaviour:
   enemyRigidbody: {fileID: 0}
   myPlaceableTarget: {fileID: 0}
   costInRage: 5
-  myPreferenceTags: 
+  myPreferenceTags: 00000000
 --- !u!212 &6740941457254276686
 SpriteRenderer:
   m_ObjectHideFlags: 0

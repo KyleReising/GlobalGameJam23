@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         this.enemyRigidbody = GetComponent<Rigidbody2D>();
-        this.myPreferenceTags = new List<Organizer.Tag>();
+        //this.myPreferenceTags = new List<Organizer.Tag>();
     }
 
     // Update is called once per frame
@@ -59,7 +59,6 @@ public class Enemy : MonoBehaviour
         // Get all our placeables
         List<Placeable> genericlist = gm.getFarmPlaceable();
         List<Placeable> preferedlist = gm.getFarmPlaceableByTags(myPreferenceTags);
-        Debug.Log(preferedlist);
 
 
         // If we do not have placeables, drop out

@@ -8,7 +8,7 @@ public class Placeable : MonoBehaviour
 {
     public float hp = 10, mhp = 10;  //hit points, maximum hit points.
     public Slider hpSlider;
-    public List<Organizer.Tag> myTags;
+    public List<Organizer.Tag> myPreferenceTags;
     public int id;
     public Mound myDirt;
     
@@ -43,7 +43,7 @@ public class Placeable : MonoBehaviour
 
     public List<Organizer.Tag> GetTags()
     {
-        return myTags;
+        return myPreferenceTags;
     }
 
     public virtual bool takeDamage(float damage)

@@ -21,7 +21,7 @@ public class Farm : MonoBehaviour
         {
             if (m.occupant != null)
             {
-                foreach (Organizer.Tag h in m.occupant.myTags)
+                foreach (Organizer.Tag h in m.occupant.myPreferenceTags)
                 {
                     if (tag == h)
                     {
@@ -45,7 +45,7 @@ public class Farm : MonoBehaviour
             {
                 foreach (Organizer.Tag t in tags)
                 {
-                    foreach (Organizer.Tag h in m.occupant.myTags)
+                    foreach (Organizer.Tag h in m.occupant.myPreferenceTags)
                     {
                         if (t == h)
                         {
