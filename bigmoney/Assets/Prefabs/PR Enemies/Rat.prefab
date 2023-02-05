@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6740941457254276686}
   - component: {fileID: 1531283049098730473}
   m_Layer: 0
-  m_Name: Swarmer
+  m_Name: Rat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
   targetLocation: {x: 0, y: 0}
   enemyRigidbody: {fileID: 0}
   myPlaceableTarget: {fileID: 0}
-  costInRage: 2
-  myPreferenceTags: 00000000
+  costInRage: 3
+  myPreferenceTags: 01000000
 --- !u!212 &6740941457254276686
 SpriteRenderer:
   m_ObjectHideFlags: 0
