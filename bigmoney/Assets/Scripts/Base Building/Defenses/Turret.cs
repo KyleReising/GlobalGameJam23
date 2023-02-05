@@ -47,6 +47,7 @@ public class Turret : Placeable
             }
             if (closest != null)
             {
+                FindObjectOfType<GameManager>().spawnAttackLine(this.gameObject.transform.position, closest.transform.position);
                 closest.takeDamage(dmg);
             }
             curCD = fireCD;
